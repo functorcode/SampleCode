@@ -1,0 +1,3 @@
+[submodule "KinectVistaMultitouch"]
+	path = KinectVistaMultitouch
+	url = git@github.com:junedmunshi/KinectVistaMultitouch.git
