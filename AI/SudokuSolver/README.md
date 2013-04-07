@@ -11,4 +11,4 @@ Run :
 python demo.py
 
 To do:
-Implement Forward Checking, Arc Consistency to improve backtracking algorithm
+Implement Forward Checking, Arc Consistency .
