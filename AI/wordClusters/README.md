@@ -1,5 +1,8 @@
 This is experimental project to create group of simillar words from given wordlist.
- 
+
+
+download:
+svn co https://github.com/junedmunshi/SampleCode/trunk/AI/wordClusters
 
 required:
 
