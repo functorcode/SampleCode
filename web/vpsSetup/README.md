@@ -2,15 +2,18 @@ Just one script to install and optimize Nginx,mysql and php5 ,php-fpm  for 128/5
 
 <h4> Download  </h4>  svn co https://github.com/junedmunshi/SampleCode/trunk/web/vpsSetup
 
-<h4> OS required </h4>
+<h4> OS </h4>
 
-ubuntu 12.04 or later
+Tested on vanilla ubuntu 12.04 .
 
 <h4> Install and setup </h4>
 
 chmod +x vpsSetup.sh
+
 chmod +x start.sh
+
 chmod +x stop.sh
+
 sudo ./vpsSetup.sh
 
 <h4> To start server </h4> 
