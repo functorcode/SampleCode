@@ -21,7 +21,8 @@ sudo ./stop.sh
 
 <h4>Before you run the script </h4>
 
-	Before you blindly run the script, you should read look at configuration files for Nginx and tweak it according to your need. Read Nginx section below.Moreover, you can also change configuration for mysql and php if given configuration file does not suit to your need. Read Mysql and Php5 section below.
+	Before you blindly run the script, you should look at configuration files for Nginx and modify it according to your need. Read Nginx section below.
+	Moreover, you can also change configuration for mysql and php if given configuration file does not suit to your need. Read Mysql and Php5 section below.
 
 
 
@@ -56,8 +57,11 @@ Things to check before you deploy:
 Note:
 
 1) Following line is not required if you are not using cakephp. Following line ensure that images,css etc. will load properly without generating "path not found " error from theme/plugin.
-	try_files $uri $uri/ /../plugins/$1/webroot/$2/$3 /../View/Themed/$2/webroot/$3/$4 ;
-	
+
+try_files $uri $uri/ /../plugins/$1/webroot/$2/$3 /../View/Themed/$2/webroot/$3/$4 ;
+
+Ref: http://lennaert.nu/2011/01/21/cakephp-performance-rewrite-plugin-assets-in-nginx/	
+
 2) You may want to turn of access_log and log_not_found for images,xml etc. files once your site functions properly.
 
 <h5>2)ngnix.conf </h5>
