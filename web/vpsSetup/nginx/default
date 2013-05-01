@@ -4,7 +4,7 @@ listen 80; ## listen for ipv4; this line is default and implied
 listen [::]:80 default ipv6only=on; ## listen for ipv6
  root   /var/www/app/webroot;
 index index.php index.html index.htm;
-server_name mastervocab.com;
+server_name yourservername;
 
 access_log /var/www/nginxlog/access.log;
 error_log /var/www/nginxlog/error.log;
