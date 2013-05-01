@@ -1,4 +1,4 @@
-Just one script to install and optimize Nginx,mysql and php5 ,php-fpm  for 128/512Mb VPS/Cloud instance.
+Just one script to install and optimise Nginx,mysql and php5 ,php-fpm  for 128/512Mb VPS/Cloud instance.
 
 <h4> Download  </h4>  svn co https://github.com/junedmunshi/SampleCode/trunk/web/vpsSetup
 
@@ -23,7 +23,7 @@ sudo ./start.sh
 sudo ./stop.sh
 
 <h4>But before you run the script </h4>
-   _Before you blindly run the script, you should look at configuration files for Nginx and modify it according to your need. Read Nginx section below._
+   _Before you blindly run the script, you should look at configuration files for Nginx and modify it according to your need._ __Everything should work off the shelf except modifying few parameters in ./nginx/default .__ _Read Nginx section below._
    
   _Moreover, you can also change configuration for mysql and php if given configuration file does not suit to your need.Read Mysql and Php5 section below._
 
@@ -33,21 +33,21 @@ It will,
 
 	1) Add required debian repository
 	
-	2) Install all required packeges ( nginx mysql-server mysql-client memcached php5 php-apc php-auth php-net-smtp php-net-socket php-pear php5-curl php5-gd php5-mcrypt php5-mysql php5-fpm php5-memcached php5-tidy vsftpd )
+	2) Install all required packages ( nginx mysql-server mysql-client memcached php5 php-apc php-auth php-net-smtp php-net-socket php-pear php5-curl php5-gd php5-mcrypt php5-mysql php5-fpm php5-memcached php5-tidy vsftpd )
 	
-	3) Take backup of orignal mysql configuration file. ( /etc/mysql/my.cnf -> /etc/mysql/my.cnf.org)
+	3) Take backup of original mysql configuration file. ( /etc/mysql/my.cnf -> /etc/mysql/my.cnf.org)
 	
-	4) Optimize mysql by patching configuration file from ./mysql/my.cnf to /etc/mysql/my.cnf
+	4) Optimise mysql by patching configuration file from ./mysql/my.cnf to /etc/mysql/my.cnf
 	
 	5) Apply same step as 3 and 5 for nginx and php5
 <h4> Files Detail </h4>
 * vpsSetup.sh   : Installation script    
-* mysql/my.cnf  : MySQL server configuration file tunned for 512Mb server running mysql and nginx
-* nginx/nginx.conf : Nginx server configuration file tunned for 512Mb server running mysql and nginx
+* mysql/my.cnf  : MySQL server configuration file  tuned for 512Mb server running mysql and nginx
+* nginx/nginx.conf : Nginx server configuration file tuned for 512Mb server running mysql and nginx
 * nginx/default :  Configuration file for your web application.It will patched to /etc/nginx/sites-available .
 * php5/fmp/php.ini : See the php section below
 * php5/fmp/php-fpm.conf : See the php section below
-* php5/fpm/pool.d/www.conf : Tunned for 512Mb server.   
+* php5/fpm/pool.d/www.conf : Tuned for 512Mb server.   
 
 <h4> If services do not start after applying optimal settings </h4>  
 1. If Nginx does not start , it may be possible that there is something wrong with either /etc/nginx/ngnix.conf or site-available/default.  
@@ -66,7 +66,7 @@ Things to check before you deploy:
 	port   
 	servername : your domain name   
 	root : path to your website code 
-	access_log and error_log : very useful for debuging your website code (not nginx) 
+	access_log and error_log : very useful for debugging your website code (not nginx) 
 	location : control behaviour for specific locations such "/" or "*.js,*.css,*.jpg (any assests)" 
 
 Note:
@@ -85,7 +85,7 @@ Blindly copied from http://www.axelsegebrecht.com/how-to/install-nginx-apc-varni
 <h4> MySQL </h4>
 <h5> my.cnf </h5>
 
-1 You may consider further tunning following paramters under '[mysqld]' section if current settings are not best fit for you.   
+1 You may consider further  tuning following parameters under '[mysqld]' section if current settings are not best fit for you.   
        
        
        key_buffer = 16K  	 (Default is 16M)   
@@ -96,7 +96,7 @@ Blindly copied from http://www.axelsegebrecht.com/how-to/install-nginx-apc-varni
 2 Innodb
     
     
-      Disable if not needed.Uncomment #skip-innodb
+      Disable if not needed.uncomment #skip-innodb
 2 Fine tune if you are using it.
        
        
@@ -109,7 +109,7 @@ Blindly copied from http://www.axelsegebrecht.com/how-to/install-nginx-apc-varni
 
 <h5>1) ./php5/fpm/php.ini </h5>
 
-The only difference between orignal and patch file is as below.
+The only difference between original and patch file is as below.
 
     ;cgi.fix_pathinfo=1 -> cgi.fix_pathinfo=0
 
