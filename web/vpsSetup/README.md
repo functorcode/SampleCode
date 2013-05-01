@@ -41,6 +41,10 @@ It will,
 	
 	5) Apply same step as 3 and 5 for nginx and php5
 
+<h4> If services do not start after applying optimal settings </h4>  
+1. If Nginx does not start , it may be possible that there is something wrong with either /etc/nginx/ngnix.conf or site-available/default.   
+2. If MySQL does not start , please check MySQL troubleshoot guide.[http://junedmunshiblog.blogspot.in/2013/05/troubleshooting-mysql.html](http://junedmunshiblog.blogspot.in/2013/05/troubleshooting-mysql.html)
+
 
 <h4> Nginx </h4>
 
