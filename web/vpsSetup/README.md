@@ -1,4 +1,4 @@
-Just one script to install and optimize Nginx,mysql and php5 ,php-fpm  for 128/512Mb VPS/Cloud instance.
+Just one script to install and optimise Nginx,mysql and php5 ,php-fpm  for 128/512Mb VPS/Cloud instance.
 
 <h4> Download  </h4>  svn co https://github.com/junedmunshi/SampleCode/trunk/web/vpsSetup
 
