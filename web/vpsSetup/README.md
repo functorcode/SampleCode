@@ -23,7 +23,7 @@ sudo ./start.sh
 sudo ./stop.sh
 
 <h4>But before you run the script </h4>
-   _Before you blindly run the script, you should look at configuration files for Nginx and modify it according to your need. Read Nginx section below._
+   _Before you blindly run the script, you should look at configuration files for Nginx and modify it according to your need. Read Nginx section below._ __Everything should work off the shelf except modifying few parameters in ./nginx/default__ 
    
   _Moreover, you can also change configuration for mysql and php if given configuration file does not suit to your need.Read Mysql and Php5 section below._
 
