@@ -1,4 +1,4 @@
-This project illustartes how to solve constrain satisfaction problems using backtracking algorithm. 
+This project illustrates how to solve constrain satisfaction problems using backtracking algorithm. 
 
 
 video:
