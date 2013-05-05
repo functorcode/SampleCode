@@ -1,58 +1,107 @@
-upstream php { server 127.0.0.1:9000; }
-server {
-listen 80; ## listen for ipv4; this line is default and implied
-listen [::]:80 default ipv6only=on; ## listen for ipv6
- root   /var/www/app/webroot;
-index index.php index.html index.htm;
-server_name yourservername;
+upstream php 
+{
+	 server 127.0.0.1:9000;
+}
+#listen 80 ; ## listen for ipv4; this line is default and implied
+#listen [::]:80 default ipv6only=on; ## listen for ipv6
+server 
+{
+	listen 80 ;
+	root   /var/www/yourdomainname/app/webroot;
+	index index.php index.html index.htm;
+	server_name yourdomainname;
 
-access_log /var/www/nginxlog/access.log;
-error_log /var/www/nginxlog/error.log;
+	access_log /var/log/mastervocabaccess.log;
+	error_log /var/log/mastervocaberror.log;
 
-location / {
- root   /var/www/app/webroot;
-index index index.php;
-  # If the file exists as a static file serve it 
-        # directly without running all
-        # the other rewite tests on it
-        if (-f $request_filename) { 
-            break; 
-        }
-        if (!-f $request_filename) {
-            rewrite ^/(.+)$ /index.php?url=$1 last;
-            break;
-        }
-port_in_redirect off;
+
+	### phpMyAdmin ###
+   location /phpmyadmin 
+   {
+           root /usr/share/;
+           index index.php index.html index.htm;
+           location ~ ^/phpmyadmin/(.+\.php)$ 
+           {
+                   try_files $uri =404;
+                   root /usr/share/;
+                   fastcgi_pass 127.0.0.1:9000;
+                   fastcgi_index index.php;
+                   fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+                   include /etc/nginx/fastcgi_params;
+           }
+           
+           location ~* ^/phpmyadmin/(.+\.(jpg|jpeg|gif|css|png|js|ico|html|xml|txt))$ 
+            {
+                   root /usr/share/;
+    		}
+    }
+  	### phpMyAdmin ###
+
+  	
+	location / 
+	{
+		
+	  # If the file exists as a static file serve it 
+		    # directly without running all
+		    # the other rewite tests on it
+		    if (-f $request_filename) 
+		    { 
+		        break; 
+		    }
+		    if (!-f $request_filename) 
+		    {
+		        rewrite ^/(.+)$ /index.php?url=$1 last;
+		        break;
+		    }
+	port_in_redirect off;
+	}
+	location ~* ^.+.(jpg|jpeg|gif|css|png|js|ico|xml)$ 
+	{
+		#access_log off;
+		#log_not_found off;
+		expires max;
+		try_files $uri $uri/ /../plugins/$1/webroot/$2/$3 /../View/Themed/$2/webroot/$3/$4 ;
+	}
+	location ~ \.php$ 
+	{
+		fastcgi_split_path_info ^(.+\.php)(/.+)$;
+		#NOTE: You should have &quot;cgi.fix_pathinfo = 0;&quot; in php.ini
+		fastcgi_pass php;
+		fastcgi_index index.php;
+		fastcgi_param SCRIPT_FILENAME /var/www/$fastcgi_script_name;
+		include fastcgi_params;
+		fastcgi_param QUERY_STRING $query_string;
+		fastcgi_param REQUEST_METHOD $request_method;
+		fastcgi_param CONTENT_TYPE $content_type;
+		fastcgi_param CONTENT_LENGTH $content_length;
+		fastcgi_intercept_errors on;
+		fastcgi_ignore_client_abort off;
+		fastcgi_connect_timeout 60;
+		fastcgi_send_timeout 360;
+		fastcgi_read_timeout 360;
+		fastcgi_buffer_size 128k;
+		fastcgi_buffers 8 256k;
+		fastcgi_busy_buffers_size 256k;
+		fastcgi_temp_file_write_size 256k;
+	}
+	location ~ /.htaccess 
+	{ 
+		deny all; log_not_found off; access_log off;
+	}
+	location ~ /.htpasswd 
+	{ 
+		deny all; log_not_found off; access_log off; 
+	}
+	location = /favicon.ico 
+	{ 
+		allow all; log_not_found off; access_log off;
+	}
+	location = /robots.txt 
+	{ 
+		allow all; log_not_found off; access_log off; 
+	}
 }
-location ~* ^.+.(jpg|jpeg|gif|css|png|js|ico|xml)$ {
-#access_log off;
-#log_not_found off;
-expires max;
-try_files $uri $uri/ /../plugins/$1/webroot/$2/$3 /../View/Themed/$2/webroot/$3/$4 ;
-}
-location ~ \.php$ {
-fastcgi_split_path_info ^(.+\.php)(/.+)$;
-#NOTE: You should have &quot;cgi.fix_pathinfo = 0;&quot; in php.ini
-fastcgi_pass php;
-fastcgi_index index.php;
-fastcgi_param SCRIPT_FILENAME /var/www/$fastcgi_script_name;
-include fastcgi_params;
-fastcgi_param QUERY_STRING $query_string;
-fastcgi_param REQUEST_METHOD $request_method;
-fastcgi_param CONTENT_TYPE $content_type;
-fastcgi_param CONTENT_LENGTH $content_length;
-fastcgi_intercept_errors on;
-fastcgi_ignore_client_abort off;
-fastcgi_connect_timeout 60;
-fastcgi_send_timeout 360;
-fastcgi_read_timeout 360;
-fastcgi_buffer_size 128k;
-fastcgi_buffers 8 256k;
-fastcgi_busy_buffers_size 256k;
-fastcgi_temp_file_write_size 256k;
-}
-location ~ /.htaccess { deny all; log_not_found off; access_log off; }
-location ~ /.htpasswd { deny all; log_not_found off; access_log off; }
-location = /favicon.ico { allow all; log_not_found off; access_log off; }
-location = /robots.txt { allow all; log_not_found off; access_log off; }
-}
+
+
+
+
