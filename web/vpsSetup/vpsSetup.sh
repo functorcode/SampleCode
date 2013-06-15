@@ -1,5 +1,5 @@
 BASEDIR=$(readlink -f $0 | xargs dirname)
-sudo aptitude install python-software-properties
+sudo apt-get install python-software-properties
 sudo add-apt-repository ppa:nginx/php5
 
 apt-get update && apt-get upgrade
