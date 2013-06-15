@@ -1,8 +1,7 @@
 BASEDIR=$(readlink -f $0 | xargs dirname)
-sudo apt-get install python-software-properties
-sudo add-apt-repository ppa:nginx/php5
-
-apt-get update && apt-get upgrade
+apt-get update
+apt-get install python-software-properties
+add-apt-repository ppa:nginx/php5
 apt-get install  iptables curl
 apt-get install libssl0.9.8
 apt-get install nginx mysql-server mysql-client memcached php5 php-apc php-auth php-net-smtp php-net-socket php-pear php5-curl php5-gd php5-mcrypt php5-mysql php5-fpm php5-memcached php5-tidy vsftpd
