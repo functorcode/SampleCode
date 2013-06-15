@@ -11,8 +11,8 @@ server
 	index index.php index.html index.htm;
 	server_name yourdomainname;
 
-	access_log /var/log/mastervocabaccess.log;
-	error_log /var/log/mastervocaberror.log;
+	access_log /var/log/yourdomainnamebaccess.log;
+	error_log /var/log/yourdomainnameerror.log;
 
 
 	### phpMyAdmin ###
