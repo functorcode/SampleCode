@@ -1,0 +1,761 @@
+[
+{
+    "pk": 1, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "permission", 
+        "name": "permission", 
+        "app_label": "auth"
+    }
+},
+{
+    "pk": 2, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "group", 
+        "name": "group", 
+        "app_label": "auth"
+    }
+},
+{
+    "pk": 3, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "user", 
+        "name": "user", 
+        "app_label": "auth"
+    }
+},
+{
+    "pk": 4, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "contenttype", 
+        "name": "content type", 
+        "app_label": "contenttypes"
+    }
+},
+{
+    "pk": 5, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "session", 
+        "name": "session", 
+        "app_label": "sessions"
+    }
+},
+{
+    "pk": 6, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "site", 
+        "name": "site", 
+        "app_label": "sites"
+    }
+},
+{
+    "pk": 7, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "logentry", 
+        "name": "log entry", 
+        "app_label": "admin"
+    }
+},
+{
+    "pk": 8, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "category", 
+        "name": "category", 
+        "app_label": "blogpost"
+    }
+},
+{
+    "pk": 9, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "blogpost", 
+        "name": "blog post", 
+        "app_label": "blogpost"
+    }
+},
+{
+    "pk": 10, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "facebookuser", 
+        "name": "facebook user", 
+        "app_label": "django_facebook"
+    }
+},
+{
+    "pk": 11, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "facebooklike", 
+        "name": "facebook like", 
+        "app_label": "django_facebook"
+    }
+},
+{
+    "pk": 12, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "facebookprofile", 
+        "name": "facebook profile", 
+        "app_label": "django_facebook"
+    }
+},
+{
+    "pk": 13, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "opengraphshare", 
+        "name": "open graph share", 
+        "app_label": "django_facebook"
+    }
+},
+{
+    "pk": 14, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "facebookinvite", 
+        "name": "facebook invite", 
+        "app_label": "django_facebook"
+    }
+},
+{
+    "pk": 15, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "apiaccess", 
+        "name": "api access", 
+        "app_label": "tastypie"
+    }
+},
+{
+    "pk": 16, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "apikey", 
+        "name": "api key", 
+        "app_label": "tastypie"
+    }
+},
+{
+    "pk": "iowaudvwsw6mwzd2sbj135u4gx8bjhk2", 
+    "model": "sessions.session", 
+    "fields": {
+        "expire_date": "2013-11-09T15:40:32.726Z", 
+        "session_data": "OWRhNDNlZTBlYjgwMTFjNzMyNzBlYTIxZjI1ZWRmMjEzMjc1OTI4ZTqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVS1kamFuZ29fZmFjZWJvb2suYXV0aF9iYWNrZW5kcy5GYWNlYm9va0JhY2tlbmRxA1UKZ3JhcGhfZGljdH1xBChVDGFjY2Vzc190b2tlbnEFWLUAAABDQUFHODVub2s1RGdCQU1yQmRUdGh1REtlWkJNbmlOR05VOUVSUHRnajFPQ1FjYmduM1JaQ2t2WWNCdmtJb3lUNFNRU2wzZG14UjZuZzJGeVNBNUo0a3NCZGoyVko5cWl2TFdOeml1cUM3VTJNdnZQTldnSG5yRldKVnp1bXJkWEtTV0hySWp2MTRoc05GcFZxOVpCWkIwZUtQWE0xSXNCeElZSThoMkt4OExUbW1BejRyUzlOcQZVB2V4cGlyZXNxB05VD3ByZWZldGNoZWRfZGF0YXEITnVVDV9hdXRoX3VzZXJfaWRxCUsCdS4="
+    }
+},
+{
+    "pk": 1, 
+    "model": "sites.site", 
+    "fields": {
+        "domain": "example.com", 
+        "name": "example.com"
+    }
+},
+{
+    "pk": 1, 
+    "model": "blogpost.category", 
+    "fields": {
+        "title": "science"
+    }
+},
+{
+    "pk": 2, 
+    "model": "blogpost.category", 
+    "fields": {
+        "title": "technology"
+    }
+},
+{
+    "pk": 3, 
+    "model": "blogpost.category", 
+    "fields": {
+        "title": "news"
+    }
+},
+{
+    "pk": 1, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_permission", 
+        "name": "Can add permission", 
+        "content_type": 1
+    }
+},
+{
+    "pk": 2, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_permission", 
+        "name": "Can change permission", 
+        "content_type": 1
+    }
+},
+{
+    "pk": 3, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_permission", 
+        "name": "Can delete permission", 
+        "content_type": 1
+    }
+},
+{
+    "pk": 4, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_group", 
+        "name": "Can add group", 
+        "content_type": 2
+    }
+},
+{
+    "pk": 5, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_group", 
+        "name": "Can change group", 
+        "content_type": 2
+    }
+},
+{
+    "pk": 6, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_group", 
+        "name": "Can delete group", 
+        "content_type": 2
+    }
+},
+{
+    "pk": 7, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_user", 
+        "name": "Can add user", 
+        "content_type": 3
+    }
+},
+{
+    "pk": 8, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_user", 
+        "name": "Can change user", 
+        "content_type": 3
+    }
+},
+{
+    "pk": 9, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_user", 
+        "name": "Can delete user", 
+        "content_type": 3
+    }
+},
+{
+    "pk": 10, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_contenttype", 
+        "name": "Can add content type", 
+        "content_type": 4
+    }
+},
+{
+    "pk": 11, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_contenttype", 
+        "name": "Can change content type", 
+        "content_type": 4
+    }
+},
+{
+    "pk": 12, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_contenttype", 
+        "name": "Can delete content type", 
+        "content_type": 4
+    }
+},
+{
+    "pk": 13, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_session", 
+        "name": "Can add session", 
+        "content_type": 5
+    }
+},
+{
+    "pk": 14, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_session", 
+        "name": "Can change session", 
+        "content_type": 5
+    }
+},
+{
+    "pk": 15, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_session", 
+        "name": "Can delete session", 
+        "content_type": 5
+    }
+},
+{
+    "pk": 16, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_site", 
+        "name": "Can add site", 
+        "content_type": 6
+    }
+},
+{
+    "pk": 17, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_site", 
+        "name": "Can change site", 
+        "content_type": 6
+    }
+},
+{
+    "pk": 18, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_site", 
+        "name": "Can delete site", 
+        "content_type": 6
+    }
+},
+{
+    "pk": 19, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_logentry", 
+        "name": "Can add log entry", 
+        "content_type": 7
+    }
+},
+{
+    "pk": 20, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_logentry", 
+        "name": "Can change log entry", 
+        "content_type": 7
+    }
+},
+{
+    "pk": 21, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_logentry", 
+        "name": "Can delete log entry", 
+        "content_type": 7
+    }
+},
+{
+    "pk": 22, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_category", 
+        "name": "Can add category", 
+        "content_type": 8
+    }
+},
+{
+    "pk": 23, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_category", 
+        "name": "Can change category", 
+        "content_type": 8
+    }
+},
+{
+    "pk": 24, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_category", 
+        "name": "Can delete category", 
+        "content_type": 8
+    }
+},
+{
+    "pk": 25, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_blogpost", 
+        "name": "Can add blog post", 
+        "content_type": 9
+    }
+},
+{
+    "pk": 26, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_blogpost", 
+        "name": "Can change blog post", 
+        "content_type": 9
+    }
+},
+{
+    "pk": 27, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_blogpost", 
+        "name": "Can delete blog post", 
+        "content_type": 9
+    }
+},
+{
+    "pk": 28, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_facebookuser", 
+        "name": "Can add facebook user", 
+        "content_type": 10
+    }
+},
+{
+    "pk": 29, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_facebookuser", 
+        "name": "Can change facebook user", 
+        "content_type": 10
+    }
+},
+{
+    "pk": 30, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_facebookuser", 
+        "name": "Can delete facebook user", 
+        "content_type": 10
+    }
+},
+{
+    "pk": 31, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_facebooklike", 
+        "name": "Can add facebook like", 
+        "content_type": 11
+    }
+},
+{
+    "pk": 32, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_facebooklike", 
+        "name": "Can change facebook like", 
+        "content_type": 11
+    }
+},
+{
+    "pk": 33, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_facebooklike", 
+        "name": "Can delete facebook like", 
+        "content_type": 11
+    }
+},
+{
+    "pk": 34, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_facebookprofile", 
+        "name": "Can add facebook profile", 
+        "content_type": 12
+    }
+},
+{
+    "pk": 35, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_facebookprofile", 
+        "name": "Can change facebook profile", 
+        "content_type": 12
+    }
+},
+{
+    "pk": 36, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_facebookprofile", 
+        "name": "Can delete facebook profile", 
+        "content_type": 12
+    }
+},
+{
+    "pk": 37, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_opengraphshare", 
+        "name": "Can add open graph share", 
+        "content_type": 13
+    }
+},
+{
+    "pk": 38, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_opengraphshare", 
+        "name": "Can change open graph share", 
+        "content_type": 13
+    }
+},
+{
+    "pk": 39, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_opengraphshare", 
+        "name": "Can delete open graph share", 
+        "content_type": 13
+    }
+},
+{
+    "pk": 40, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_facebookinvite", 
+        "name": "Can add facebook invite", 
+        "content_type": 14
+    }
+},
+{
+    "pk": 41, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_facebookinvite", 
+        "name": "Can change facebook invite", 
+        "content_type": 14
+    }
+},
+{
+    "pk": 42, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_facebookinvite", 
+        "name": "Can delete facebook invite", 
+        "content_type": 14
+    }
+},
+{
+    "pk": 43, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_apiaccess", 
+        "name": "Can add api access", 
+        "content_type": 15
+    }
+},
+{
+    "pk": 44, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_apiaccess", 
+        "name": "Can change api access", 
+        "content_type": 15
+    }
+},
+{
+    "pk": 45, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_apiaccess", 
+        "name": "Can delete api access", 
+        "content_type": 15
+    }
+},
+{
+    "pk": 46, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_apikey", 
+        "name": "Can add api key", 
+        "content_type": 16
+    }
+},
+{
+    "pk": 47, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_apikey", 
+        "name": "Can change api key", 
+        "content_type": 16
+    }
+},
+{
+    "pk": 48, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_apikey", 
+        "name": "Can delete api key", 
+        "content_type": 16
+    }
+},
+{
+    "pk": 1, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "admin", 
+        "first_name": "", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": true, 
+        "is_staff": true, 
+        "last_login": "2013-10-26T15:39:21.264Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "admin", 
+        "email": "fake@email.com", 
+        "date_joined": "2013-10-26T15:39:21.264Z"
+    }
+},
+{
+    "pk": 2, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "juned.munshi", 
+        "first_name": "Juned", 
+        "last_name": "Munshi", 
+        "is_active": true, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2013-10-26T15:40:31.323Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "12345", 
+        "email": "fake@email.com", 
+        "date_joined": "2013-10-26T15:40:28.771Z"
+    }
+},
+{
+    "pk": 1, 
+    "model": "blogpost.blogpost", 
+    "fields": {
+        "category": 1, 
+        "postedDate": "2013-10-26T16:01:32.525Z", 
+        "textData": "amdmsadasdajdjakdja", 
+        "createdBy": 2, 
+        "title": "testpost1"
+    }
+},
+{
+    "pk": 2, 
+    "model": "blogpost.blogpost", 
+    "fields": {
+        "category": 1, 
+        "postedDate": "2013-10-26T17:47:55.635Z", 
+        "textData": "amdmsadasdajdjakdja", 
+        "createdBy": 2, 
+        "title": "testpost2"
+    }
+},
+{
+    "pk": 3, 
+    "model": "blogpost.blogpost", 
+    "fields": {
+        "category": 1, 
+        "postedDate": "2013-10-26T17:54:43.901Z", 
+        "textData": "amdmsadasdajdjakdja", 
+        "createdBy": 2, 
+        "title": "testpost2"
+    }
+},
+{
+    "pk": 4, 
+    "model": "blogpost.blogpost", 
+    "fields": {
+        "category": 1, 
+        "postedDate": "2013-10-26T18:38:59.413Z", 
+        "textData": "amdmsadasdajdjakdja", 
+        "createdBy": 2, 
+        "title": "testpost2sdfdsfdsfdsfdsfsf"
+    }
+},
+{
+    "pk": 5, 
+    "model": "blogpost.blogpost", 
+    "fields": {
+        "category": 1, 
+        "postedDate": "2013-10-26T19:01:29.177Z", 
+        "textData": "amdmsadasdajdjakdja", 
+        "createdBy": 2, 
+        "title": "testpost2sdfdsfdsfdsfdsfsf"
+    }
+},
+{
+    "pk": 6, 
+    "model": "blogpost.blogpost", 
+    "fields": {
+        "category": 1, 
+        "postedDate": "2013-10-26T20:29:59.901Z", 
+        "textData": "asdasd", 
+        "createdBy": 2, 
+        "title": "sadas"
+    }
+},
+{
+    "pk": 7, 
+    "model": "blogpost.blogpost", 
+    "fields": {
+        "category": 2, 
+        "postedDate": "2013-10-26T20:32:41.729Z", 
+        "textData": "asdasdmasdk34324324342423", 
+        "createdBy": 2, 
+        "title": "sadas"
+    }
+},
+{
+    "pk": 8, 
+    "model": "blogpost.blogpost", 
+    "fields": {
+        "category": 3, 
+        "postedDate": "2013-10-26T20:32:43.252Z", 
+        "textData": "junedmunshi901203219312302031321", 
+        "createdBy": 2, 
+        "title": "sadas"
+    }
+},
+{
+    "pk": 9, 
+    "model": "blogpost.blogpost", 
+    "fields": {
+        "category": 3, 
+        "postedDate": "2013-10-26T20:32:44.307Z", 
+        "textData": "jduna3m4,324", 
+        "createdBy": 2, 
+        "title": "sdasdsadsa"
+    }
+},
+{
+    "pk": 10, 
+    "model": "blogpost.blogpost", 
+    "fields": {
+        "category": 3, 
+        "postedDate": "2013-10-27T07:57:17.064Z", 
+        "textData": "sada343", 
+        "createdBy": 2, 
+        "title": "sdsdsa"
+    }
+}
+]
