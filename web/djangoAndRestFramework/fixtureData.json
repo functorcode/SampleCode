@@ -483,6 +483,11 @@
     "fields": {
         "codename": "add_facebookprofile", 
         "name": "Can add facebook profile", 
+        "username": "juned.munshi", 
+        "first_name": "Juned", 
+        "last_name": "Munshi"
+    }
+]
         "content_type": 12
     }
 },
