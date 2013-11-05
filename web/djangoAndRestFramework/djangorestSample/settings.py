@@ -83,7 +83,8 @@ STATICFILES_FINDERS = (
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 REST_FRAMEWORK = {
-        'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',)
+        'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',),
+      
         }
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '^69pmy7jq(0)&fmvf-5f#0@mz3-^*3q#%fv8)gea#izyn+zx*('
