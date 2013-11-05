@@ -1,0 +1,29 @@
+" Sets up omni-completion for a django project in a virtualenv.
+"
+" Copy this file to YOUR_VIRTUALENV_DIR/.vimrc and add the following to your
+" ~/.vimrc file:
+"     if filereadable($VIRTUAL_ENV . '/.vimrc')
+"         source $VIRTUAL_ENV/.vimrc
+"     endif
+"
+" Thanks, Daniel!
+" http://blog.roseman.org.uk/2010/04/21/vim-autocomplete-django-and-virtualenv/
+
+py << EOF
+import os.path
+import sys
+import vim
+
+# SET THIS MANUALLY
+# =================
+#DJANGO_SETTINGS_MODULE='djangorestsample.settings'
+
+project_base_dir = "/home/juned/Code/pinry" #os.environ['/home/juned/Code/pinry']
+
+sys.path.insert(0, project_base_dir)
+
+activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+execfile(activate_this, dict(__file__=activate_this))
+
+#os.environ['DJANGO_SETTINGS_MODULE'] = DJANGO_SETTINGS_MODULE
+EOF

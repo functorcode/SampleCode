@@ -1,3 +1,6 @@
+" part of script is copied form https://github.com/yodiaditya/vim-pydjango/blob/master/.vimrc
+" added script for maping keys , virtual env and removed unwanted packges
+
 set nocompatible " be iMproved
 filetype off                   " required!
 
@@ -54,8 +57,8 @@ Bundle "vim-scripts/indentpython.vim"
 Bundle 'tpope/vim-fugitive'
 
 
-if filereadable('/home/juned/Code/pinry/.vimrc')
-      source /home/juned/Code/pinry/.vimrc
+if filereadable('/home/juned/Code/pinry/.vimrc-virtualenv')
+      source /home/juned/Code/pinry/.vimrc-virtualenv
 endif
 let g:virtualenv_directory = '/home/juned/Code/pinry/'
 
